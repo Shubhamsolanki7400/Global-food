@@ -13,10 +13,8 @@ const Footer = () => {
                     <div className="single-cta">
                         <i className="fas fa-map-marker-alt"></i>
                         <div className="cta-text">
-                            <h4>Head Office - Indore</h4>
-                            <span>18/1 Balaji Vihar, Sanwer Road, Industry Area, Indore M.P</span>
-                            <h4>Corporate Office</h4>
-                            <span>49/C Nagin Nagar Indore, M.P India</span>
+                            <h4>Office Address</h4>
+                            <span>204, Bansiwala Tower, Above Morni Sarees, Sapna Sangeeta Road, Indore, Madhya Pradesh, 452001 India</span>
                         </div>
                     </div>
                 </div>
@@ -44,11 +42,11 @@ const Footer = () => {
                         <i className="far fa-envelope-open"></i>
                         <div className="cta-text">
                             <h4>Mail us</h4>
-                            <span>info@eaglesexports.com</span>
+                            <span>info@globalfoodsproduct.com</span>
                             
                             {/* --- Phone/WhatsApp Added Below Email --- */}
                             <h4 style={{marginTop:"15px"}}>Call/WhatsApp</h4> 
-                            <span>+91 9243986665</span>
+                            <span>+91 9993120085 </span>
                             {/* --- END Phone/WhatsApp --- */}
                         </div>
                     </div>

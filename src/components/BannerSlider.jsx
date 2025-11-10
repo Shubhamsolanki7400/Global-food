@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import image1 from '../../src/assets/images/banner1.jpg'
-import image2 from '../../src/assets/images/healthingradients.png'
-import image3 from '../../src/assets/images/banner3.jpg'
-import image4 from '../../src/assets/images/banner4.jpg'
-
+import image1 from '../../src/assets/images/banner1.jpeg'
+import image2 from '../../src/assets/images/banner2.jpeg'
+import image3 from '../../src/assets/images/banner3.jpeg'
+import image4 from '../../src/assets/images/banner4 (1).jpg'
+import image5 from '../../src/assets/images/banner5.jpg'
 const banners = [
   {
-    image: image1,  // ← Use the imported variable
+    image: image1, 
     head: "Let the nature heal you",
     title: "ORGANIC",
     subtitle: "Essential Oils",
@@ -33,6 +33,13 @@ const banners = [
     subtitle: "Indian Spice",
     text: "Authentic Flavors from India",
   },
+   {
+  image: image5,
+  head: "Experience True Indian Nutrition",
+  title: "NATURAL",
+  subtitle: "Pulses & Grains",
+  text: "Nutritious-bringing purity and taste to every meal",
+},
 ];
 
 export default function BannerSlider() {
@@ -45,8 +52,8 @@ export default function BannerSlider() {
       setTimeout(() => {
         setCurrentSlide((prev) => (prev + 1) % banners.length);
         setFadeState('fade-in');
-      }, 800);
-    }, 5000);
+      }, 500);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
@@ -136,32 +143,6 @@ export default function BannerSlider() {
           }}>
             {banner.text}
           </p>
-          
-          <button 
-            className="shop-btn"
-            style={{
-              padding: '16px 32px',
-              backgroundColor: '#0d6efd',
-              color: 'white',
-              fontWeight: '600',
-              fontSize: '16px',
-              border: 'none',
-              borderRadius: '8px',
-              cursor: 'pointer',
-             
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = '#0d6efd';
-              e.target.style.transform = 'scale(1.05)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = '#0d6efd';
-              e.target.style.transform = 'scale(1)';
-            }}
-          >
-            Shop Now
-          </button>
         </div>
       </div>
 
@@ -191,64 +172,6 @@ export default function BannerSlider() {
           />
         ))}
       </div>
-
-      <button
-        onClick={() => goToSlide((currentSlide - 1 + banners.length) % banners.length)}
-        style={{
-          position: 'absolute',
-          left: '16px',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          width: '48px',
-          height: '48px',
-          backgroundColor: '#0d6efd',
-          border: 'none',
-          borderRadius: '50%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
-          transition: 'all 0.3s ease',
-          zIndex: 10,
-          fontSize: '24px',
-          color: 'white',
-          fontWeight: 'bold'
-        }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = '#0d6efd'}
-        onMouseLeave={(e) => e.target.style.backgroundColor = '#0d6efd'}
-        aria-label="Previous slide"
-      >
-        ‹
-      </button>
-      
-      <button
-        onClick={() => goToSlide((currentSlide + 1) % banners.length)}
-        style={{
-          position: 'absolute',
-          right: '16px',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          width: '48px',
-          height: '48px',
-          backgroundColor: '#0d6efd',
-          border: 'none',
-          borderRadius: '50%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
-          transition: 'all 0.3s ease',
-          zIndex: 10,
-          fontSize: '24px',
-          color: 'white',
-          fontWeight: 'bold'
-        }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = '#0d6efd'}
-        onMouseLeave={(e) => e.target.style.backgroundColor = '#0d6efd'}
-        aria-label="Next slide"
-      >
-        ›
-      </button>
     </div>
   );
 }

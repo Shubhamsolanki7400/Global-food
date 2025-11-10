@@ -1,3 +1,110 @@
 .t-m-b{
     background-color: #1E2633;
 }
+
+.abt-expmore{
+    justify-content: flex-start;
+}
+@media (max-width: 767px) {
+  .abt-section .abtsm-div {
+     right: 0 !important;
+     width: 100% !important;
+     height: 100% !important;
+     top: unset !important;
+  }
+  .abt-section .abtsm-img{
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .abt-dethead{
+    font-size: 2rem !important;
+    text-align: center;
+
+  }
+  .abt-expmore{
+    justify-content: center;
+
+  }
+}
+
+.why-section {
+  background: #f9fafc;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.section-title span {
+  color: #5294ea;
+}
+
+.why-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+}
+
+.why-card.animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.why-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+  font-size: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.why-card:hover .icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.icon.green {
+  color: #28a745;
+}
+
+.icon.blue {
+  color: #007bff;
+}
+
+.icon.orange {
+  color: #fd7e14;
+}
+
+.icon.yellow {
+  color: #ffc107;
+}
+
+.why-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.why-desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .why-card {
+    padding: 20px;
+  }
+}

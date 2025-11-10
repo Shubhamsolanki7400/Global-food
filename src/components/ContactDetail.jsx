@@ -25,16 +25,32 @@ const ContactDetail = () => {
   return (
     <>
       <section className="contact_us">
+           <div style={{ textAlign: 'center' }}>
+            <h2
+              className="section-title mb-3 pt-5"
+              style={{
+                display: 'inline-block',
+                position: 'relative',
+                paddingBottom: '10px',
+              }}
+            >
+              Send Us a Message
+              <span
+                style={{
+                  content: '""',
+                  position: 'absolute',
+                  bottom: 0,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '80px',
+                  height: '4px',
+                  borderRadius: '2px',
+                  background: 'linear-gradient(90deg, #5294ea, #42b883)',
+                }}
+              ></span>
+            </h2>
+          </div>
          {/* Banner Section */}
-      <div
-        className="services-banner"
-        style={{
-          backgroundImage: `url(${require('../../src/assets/images/Service.jpg')})`,
-        }}
-      >
-        <div className="banner-overlay"></div>
-        <h1 className="banner-title">Contact Us</h1>
-      </div>
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -117,29 +133,32 @@ const ContactDetail = () => {
         </div>
       </section>
 
-      <section className="map_sec">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="map_inner">
-                <h4>Find Us on Google Map</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quo beatae quasi assumenda, expedita aliquam minima tenetur maiores neque incidunt repellat aut voluptas hic dolorem sequi ab porro, quia error.</p>
-                <div className="map_bind">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=..."
-                    width="100%"
-                    height="450"
-                    style={{ border: "0" }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    title="Google Map"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
+   <section className="map_sec">
+  <div className="container">
+    <div className="row">
+      <div className="col-md-12">
+        <div className="map_inner">
+          <h4>Find Us on Google Map</h4>
+          <p>
+            Visit our office at <strong>204, Bansiwala Tower, Above Morni Sarees, Sapna Sangeeta Road, Indore, Madhya Pradesh, 452001, India</strong>.  
+            We welcome you to connect with us for business inquiries, product details, or partnership opportunities.
+          </p>
+          <div className="map_bind">
+            <iframe
+              src="https://www.google.com/maps?q=204,+Bansiwala+Tower,+Above+Morni+Sarees,+Sapna+Sangeeta+Road,+Indore,+Madhya+Pradesh,+452001,+India&output=embed"
+              width="100%"
+              height="450"
+              style={{ border: "0" }}
+              allowFullScreen=""
+              loading="lazy"
+              title="Eagles Exports Location"
+            ></iframe>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Toaster */}
       <ToastContainer position="top-center" autoClose={3000} />

@@ -5,6 +5,7 @@ const Products = () => {
   const [ingredSearch, setingredSearch] = useState('');
   const [oilSearch, setOilSearch] = useState('');
   const [extractSearch, setExtractSearch] = useState('');
+  const [pulseSearch,setPulseSearch]=useState('');
   const [activeCategory, setActiveCategory] = useState('all');
 
   const herbsData = [
@@ -53,6 +54,32 @@ const Products = () => {
     { ingredient: "Ashwagandha Powder", botanicalName: "Withania somnifera", partUsed: "Root" },
   ];
 
+  const grainsAndPulses = [
+  { ingredient: "Black Gram", botanicalName: "", partUsed: "" },
+  { ingredient: "Batri Dall", botanicalName: "", partUsed: "" },
+  { ingredient: "Black Lentil", botanicalName: "", partUsed: "" },
+  { ingredient: "Brown Eye Bean", botanicalName: "", partUsed: "" },
+  { ingredient: "Chickpeas", botanicalName: "Cicer arietinum", partUsed: "Seed" },
+  { ingredient: "Green Gram", botanicalName: "Vigna radiata", partUsed: "Seed" },
+  { ingredient: "Green Peas", botanicalName: "Pisum sativum", partUsed: "Seed" },
+  { ingredient: "Kidney Beans", botanicalName: "Phaseolus vulgaris", partUsed: "Seed" },
+  { ingredient: "Kidney Beans (Rajma Chitra)", botanicalName: "Phaseolus vulgaris", partUsed: "Seed" },
+  { ingredient: "Red Lentil", botanicalName: "Lens culinaris", partUsed: "Seed" },
+  { ingredient: "Red Split Lentils", botanicalName: "Lens culinaris", partUsed: "Seed" },
+  { ingredient: "Split Moth Beans", botanicalName: "Vigna aconitifolia", partUsed: "Seed" },
+  { ingredient: "Split Pigeon Peas", botanicalName: "Cajanus cajan", partUsed: "Seed" },
+  { ingredient: "Split Chickpeas", botanicalName: "Cicer arietinum", partUsed: "Seed" },
+  { ingredient: "Moth Bean", botanicalName: "Vigna aconitifolia", partUsed: "Seed" },
+  { ingredient: "Matpe Beans", botanicalName: "Vigna mungo", partUsed: "Seed" },
+  { ingredient: "Red Kidney Beans", botanicalName: "Phaseolus vulgaris", partUsed: "Seed" },
+  { ingredient: "Split Green Gram (With Skin)", botanicalName: "Vigna radiata", partUsed: "Seed" },
+  { ingredient: "Split Yellow Mung Dal", botanicalName: "Vigna radiata", partUsed: "Seed" },
+  { ingredient: "Split Peas", botanicalName: "Pisum sativum", partUsed: "Seed" },
+  { ingredient: "Whole Gram", botanicalName: "Cicer arietinum", partUsed: "Seed" },
+  { ingredient: "White Peas", botanicalName: "Pisum sativum", partUsed: "Seed" },
+];
+
+
   const filterData = herbsData.filter((item) =>
     Object.values(item).some((val) => val.toLowerCase().includes(searchTerm.toLowerCase()))
   );
@@ -68,6 +95,8 @@ const Products = () => {
   const filteredExtracts = extracts.filter((item) =>
     Object.values(item).some((val) => val.toLowerCase().includes(extractSearch.toLowerCase()))
   );
+
+  const filterPulses= grainsAndPulses.filter((item)=> Object.values(item).some((val) => val.toLowerCase().includes(pulseSearch.toLowerCase())))
 
   // Convert herbs data to flat array
   const flatHerbsData = filterData.flatMap(item => [
@@ -127,6 +156,8 @@ const Products = () => {
           margin-bottom: 1rem;
           position: relative;
           display: inline-block;
+              background: linear-gradient(135deg, rgb(236, 72, 153), rgb(147, 51, 234)) text;
+    -webkit-text-fill-color: transparent;
         }
 
         .section-subtitle {
@@ -576,7 +607,7 @@ const Products = () => {
       <div
         className="product-banner"
         style={{
-          backgroundImage: `url(${require('../assets/images/Product.png')})`,
+          backgroundImage: `url(${require('../assets/images/ProductBanner1.jpeg')})`,
         }}
       >
         <div className="product-banner-overlay"></div>
@@ -880,7 +911,104 @@ const Products = () => {
               )}
             </div>
           </div>
+          {/* Pulses and Grains Section */}
+           <div className="product-section-wrapper">
+  <div className="section-header-box">
+    <h2
+      className="section-title-main"
+      style={{
+        background: 'linear-gradient(135deg, #22c55e, #16a34a)', // Green gradient
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+      }}
+    >
+      🌾 Pulses & Grains
+    </h2>
+    <p className="section-subtitle">
+      High-quality pulses and grains sourced from trusted farms for global supply.
+    </p>
+  </div>
 
+  <div className="featured-section">
+    <div className="featured-content">
+       <div className="featured-image">
+        <img
+          src={require('../assets/images/banner5.jpg')}
+          alt="Pulses and Grains"
+        />
+      </div>
+      <div className="featured-text">
+        <h3
+          style={{
+            background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Wholesome & Nutritious
+        </h3>
+        <p>
+          Our pulses and grains are carefully selected for their superior taste, nutrition, and
+          purity. Ideal for exports, retail packaging, and bulk trade.
+        </p>
+
+        <div className="stats-box">
+          <div className="stat-item">
+            <div className="stat-number">{grainsAndPulses.length}+</div>
+            <div className="stat-label">Varieties</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-number">Farm</div>
+            <div className="stat-label">Fresh</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-number">Globally</div>
+            <div className="stat-label">Sourced</div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+  <div className="search-filter-bar">
+    <div className="search-box">
+      <span className="search-icon">🔍</span>
+      <input
+        type="text"
+        className="search-input-modern"
+        placeholder="Search pulses or grains..."
+        value={pulseSearch}
+        onChange={(e) => setPulseSearch(e.target.value)}
+      />
+    </div>
+  </div>
+
+  <div className="product-grid">
+    {filterPulses.length > 0 ? (
+      filterPulses.map((item, index) => (
+        <div key={index} className="product-card card-green">
+          <div className="product-icon icon-green">🌾</div>
+          <div className="product-content">
+            <h4 className="product-card-title">{item.ingredient}</h4>
+            {item.botanicalName && (
+              <p className="product-card-subtitle">
+                <em>{item.botanicalName}</em>
+              </p>
+            )}
+          </div>
+          {item.partUsed && (
+            <div className="product-badge badge-green">{item.partUsed}</div>
+          )}
+        </div>
+      ))
+    ) : (
+      <div className="empty-state" style={{ gridColumn: '1 / -1' }}>
+        <div className="empty-state-icon">🔍</div>
+        <p>No pulses or grains found</p>
+      </div>
+    )}
+  </div>
+</div>
         </div>
       </section>
     </>

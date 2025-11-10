@@ -72,7 +72,8 @@ const ProductDetail = () => {
         .section-title {
           font-size: 3rem;
           font-weight: bold;
-          color: #1f2937;
+              background: linear-gradient(135deg, rgb(236, 72, 153), rgb(147, 51, 234)) text;
+    -webkit-text-fill-color: transparent;
         }
 
         .swiper-container {
@@ -565,9 +566,6 @@ const ProductDetail = () => {
                           
                           {/* Bottom Section */}
                           <div className="bottom-section d-flex align-items-center justify-content-between">
-                            <span className="text-white" style={{ fontSize: '13px', opacity: 0.8 }}>
-                              20.02.2019
-                            </span>
                             <Link to="/products" className="text-decoration-none">
                               <motion.button 
                                 className="know-more-btn btn text-white fw-semibold"

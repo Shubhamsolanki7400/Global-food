@@ -10,7 +10,8 @@
   }
 
   .navbar .nav-links a{
-    color: #5294ea;
+        background: linear-gradient(135deg, rgb(236, 72, 153), rgb(147, 51, 234)) text;
+    -webkit-text-fill-color: transparent;
     font-size: 20px;
     font-weight: 700;
   }

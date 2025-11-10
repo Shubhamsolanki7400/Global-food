@@ -2,7 +2,11 @@ import React from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import global from '../assets/images/GlobalSourcing.jpg';
+import imexport from '../assets/images/exportimportservice.jpeg'
+import quality from '../assets/images/qualityassurance.jpg'
+import supply from '../assets/images/supplysolution.jpeg'
+import delivery from '../assets/images/Timelydelivery.jpeg'
 const Services = () => {
   const servicesData = [
     {
@@ -10,7 +14,7 @@ const Services = () => {
       title: "Global Sourcing",
       description: "Partnering with trusted suppliers to ensure premium quality and authenticity.",
       icon: "🌿",
-      image: "https://images.unsplash.com/photo-1505944270255-72b8c68c6a70?w=600&q=80",
+      image: global,
       gradient: "linear-gradient(to bottom right, #ec4899, #9333ea)",
       color: "#ec4899"
     },
@@ -19,7 +23,7 @@ const Services = () => {
       title: "Export & Import Management",
       description: "Complete handling of documentation, logistics, and international compliance.",
       icon: "🚢",
-      image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&q=80",
+      image: imexport,
       gradient: "linear-gradient(to bottom right, #3b82f6, #4f46e5)",
       color: "#3b82f6"
     },
@@ -28,7 +32,7 @@ const Services = () => {
       title: "Quality Assurance",
       description: "Rigorous testing and certification for every batch.",
       icon: "🧪",
-      image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&q=80",
+      image: quality,
       gradient: "linear-gradient(to bottom right, #4ade80, #0d9488)",
       color: "#4ade80"
     },
@@ -37,7 +41,7 @@ const Services = () => {
       title: "Customised Supply Solutions",
       description: "Tailored sourcing to meet client-specific needs.",
       icon: "🤝",
-      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80",
+      image: supply,
       gradient: "linear-gradient(to bottom right, #fbbf24, #f97316)",
       color: "#fbbf24"
     },
@@ -46,7 +50,7 @@ const Services = () => {
       title: "Timely Delivery",
       description: "Efficient operations ensure prompt and reliable shipments.",
       icon: "⏱️",
-      image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&q=80",
+      image: delivery,
       gradient: "linear-gradient(to bottom right, #a855f7, #ec4899)",
       color: "#a855f7"
     }
@@ -58,7 +62,7 @@ const Services = () => {
       <div
         className="services-banner"
         style={{
-          backgroundImage: `url(${require('../../src/assets/images/Service.png')})`,
+          backgroundImage: `url(${require('../../src/assets/images/service2.png')})`,
         }}
       >
         <div className="banner-overlay"></div>
@@ -73,12 +77,14 @@ const Services = () => {
           viewport={{ once: true }}
         >
           <h2 
-            className="mb-4 " 
+            className=" mb-4 " 
             style={{ 
-              fontSize: '3rem', 
-              fontWeight: '700', 
-              color: '#212529',
-              marginTop:'30px'
+              fontSize: '3rem',
+    fontWeight: 700,
+    background: 'linear-gradient(135deg, rgb(236, 72, 153), rgb(147, 51, 234))',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    marginTop: '30px',
             }}
           >
           How it Works

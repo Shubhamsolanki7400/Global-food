@@ -342,7 +342,6 @@
   font-weight: bold;
   color: #5294ea;
   position: relative;
-  display: inline;
 }
 
 
@@ -522,6 +521,7 @@ button.contact_form_submit {
         .banner-title {
           position: relative;
           color: white;
+              margin-top: 75px;
           font-size: 4rem;
           font-weight: 700;
           text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -835,17 +835,7 @@ min-height: 250px !important;
   background-position: top left;
 }
 
-.bg-pattern-1 {
-  background-image: url(../assets/images/service2banner.png);
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
+
 
 .auto-container {
   position: static;
@@ -986,7 +976,6 @@ min-height: 250px !important;
     background: var(--contact-bg-white);
     border-radius: 15px; /* Modern rounded corners */
     box-shadow: var(--contact-shadow);
-   margin-top: 73px;
     overflow: hidden; /* Contains floating elements */
     border: 1px solid var(--contact-border-color);
     position: relative;
@@ -1115,10 +1104,17 @@ min-height: 250px !important;
 /* --- Responsive Adjustments (Crucial for the split layout) --- */
 @media (max-width: 991px) {
     .contact_inner {
-        padding: 2rem;
         flex-direction: column;
     }
     
+    .banner-title{
+      font-size: 2rem;
+
+    }
+
+    .services-banner{
+      padding: 24%;
+    }
     .contact_form_inner {
         padding: 0;
     }
@@ -1242,4 +1238,28 @@ min-height: 250px !important;
     .cta-text h4 {
         text-align: center;
     }
+}
+
+.map_sec {
+  background-color: #f9fafc;
+  padding: 60px 0;
+}
+
+.map_inner h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.map_inner p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.map_bind iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }

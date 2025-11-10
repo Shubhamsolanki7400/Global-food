@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Globe, Truck, ArrowLeftRight } from "lucide-react";
-
+import globalSourcing from '../assets/images/GlobalSourcing.jpg' 
+import importExport from '../assets/images/exportimportservice.jpeg'
+import quality from '../assets/images/qualityassurance.jpg'
 const ServiceDetail = () => {
   const [activeService, setActiveService] = useState("oneForAll");
 
@@ -10,42 +12,25 @@ const ServiceDetail = () => {
       text: "Partnering with trusted suppliers to ensure premium quality and authenticity.",
       icon: <Globe />,
       gradient: 'linear-gradient(135deg, #ec4899, #9333ea)', // Pink to Purple
-      image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80' // Herbal/spices image
+      image:  globalSourcing, // Herbal/spices image
     },
     import: {
       title: " Export & Import Management",
       text: "Complete handling of documentation, logistics, and international compliance.",
       icon: <Truck />,
-      gradient: 'linear-gradient(135deg, #4ade80, #0d9488)', // Green to Teal
-      image: 'https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=800&q=80' // Shipping/logistics
+      gradient: 'linear-gradient(135deg, #fbb333, #f97323)', // Green to Teal
+      image:  importExport // Shipping/logistics
     },
     export: {
       title: "Quality Assurance",
       text: "Rigorous testing and certification for every batch",
       icon: <ArrowLeftRight />,
-      gradient: 'linear-gradient(135deg, #fbbf24, #f97316)', // Yellow to Orange
-      image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80' // Global trade
+      gradient: 'linear-gradient(135deg, #ec4899, #9333ea)', // Yellow to Orange
+      image: quality // Global trade
     },
   };
 
-  const containerStyle = {
-    backgroundColor: '#1f2937',
-    minHeight: '100vh',
-    padding: '4rem 2rem',
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-  };
 
-  const mainCardStyle = {
-    maxWidth: '1400px',
-    margin: '0 auto',
-    backgroundColor: '#374151',
-    borderRadius: '32px',
-    padding: '3.5rem',
-    border: '2px solid #4a5568',
-    position: 'relative',
-    overflow: 'hidden',
-    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
-  };
 
   const decorativeDotStyle = (top, left, gradient, size = '12px') => ({
     position: 'absolute',
@@ -65,19 +50,6 @@ const ServiceDetail = () => {
     fontWeight: '700',
     marginBottom: '3rem',
     letterSpacing: '-0.5px',
-  };
-
-  const contentWrapperStyle = {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gap: '3rem',
-    alignItems: 'start',
-  };
-
-  const servicesListStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1.5rem',
   };
 
   const serviceCardStyle = (isActive, gradient) => ({
@@ -110,22 +82,6 @@ const ServiceDetail = () => {
     boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)',
   });
 
-  const serviceContentStyle = {
-    flex: 1,
-  };
-
-  const serviceTitleStyle = {
-    color: '#ffffff',
-    fontSize: '1.6rem',
-    fontWeight: '600',
-    marginBottom: '0.75rem',
-  };
-
-  const serviceTextStyle = {
-    color: '#cbd5e0',
-    fontSize: '1rem',
-    lineHeight: '1.7',
-  };
 
   const mediaBoxStyle = (gradient, image) => ({
     backgroundColor: '#4a5568',
@@ -142,34 +98,6 @@ const ServiceDetail = () => {
     backgroundBlendMode: 'overlay',
     boxShadow: '0 15px 40px rgba(0, 0, 0, 0.4)',
   });
-
-  const overlayStyle = {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-    padding: '2.5rem',
-  };
-
-  const imageTextStyle = {
-    color: '#ffffff',
-    fontSize: '1.8rem',
-    fontWeight: '700',
-    marginBottom: '0.5rem',
-    textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
-  };
-
-  const imageSubtextStyle = {
-    color: '#ffffff',
-    fontSize: '1.1rem',
-    opacity: 0.9,
-    textShadow: '0 2px 8px rgba(0, 0, 0, 0.5)',
-  };
 
   const badgeStyle = (gradient) => ({
   
@@ -291,7 +219,6 @@ const ServiceDetail = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
@@ -621,7 +548,6 @@ const ServiceDetail = () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -654,6 +580,31 @@ const ServiceDetail = () => {
       `}</style>
 
     <div className="service-container">
+        <div style={{ textAlign: 'center' }}>
+            <h2
+              className="section-title mb-3 pt-5"
+              style={{
+                display: 'inline-block',
+                position: 'relative',
+                paddingBottom: '10px',
+              }}
+            >
+              Services
+              <span
+                style={{
+                  content: '""',
+                  position: 'absolute',
+                  bottom: 0,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '80px',
+                  height: '4px',
+                  borderRadius: '2px',
+                  background: 'linear-gradient(90deg, #5294ea, #42b883)',
+                }}
+              ></span>
+            </h2>
+          </div>
       <div className="service-main-card">
         {/* Decorative colorful dots */}
         <div className="decorative-dot" style={decorativeDotStyle('8%', '95%', 'linear-gradient(135deg, #ec4899, #9333ea)', '18px')}></div>

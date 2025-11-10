@@ -7,6 +7,15 @@ const Contact = () => {
 
   return (
    <>
+    <div
+        className="services-banner"
+        style={{
+          backgroundImage: `url(${require('../../src/assets/images/Contact-Us-Banner.webp')})`,
+        }}
+      >
+        <div className="banner-overlay"></div>
+        <h1 className="banner-title">Contact Us</h1>
+      </div>
    <ContactDetail/>
    </>
     

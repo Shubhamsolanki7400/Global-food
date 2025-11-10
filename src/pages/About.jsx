@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CountUp from 'react-countup';
+import { FaLeaf, FaHandshake, FaShippingFast, FaStar } from "react-icons/fa";
+
 import { useInView } from 'react-intersection-observer';
-import image1 from '../assets/images/banner1.png';
-import image2 from '../assets/images/banner2.png';
-import image3 from '../assets/images/banner3.png';
-import image4 from '../assets/images/banner4.png';
+import image1 from '../assets/images/banner1.jpg';
+import image2 from '../assets/images/banner2.jpg';
+import image3 from '../assets/images/banner3.jpg';
+import image4 from '../assets/images/banner4.jpg';
 
 
 const About = () => {
@@ -30,19 +32,60 @@ const About = () => {
 
     counters: [
       { id: 1, count: 100, suffix: "+", title1: "Types of", title2: "Essential Oils" },
-      { id: 2, count: 15, suffix: "", title1: "Years of", title2: "Expertise" },
+      { id: 2, count: 17, suffix: "", title1: "Years of", title2: "Expertise" },
     ],
   };
 
- 
+  const reasons = [
+    {
+      icon: <FaLeaf className="icon green" />,
+      title: "100% Natural Products",
+      desc: "We source only the finest quality herbs, spices, and ingredients, ensuring purity and authenticity in every product.",
+    },
+    {
+      icon: <FaHandshake className="icon blue" />,
+      title: "Trusted Partnerships",
+      desc: "We believe in long-term collaborations built on trust, transparency, and mutual growth.",
+    },
+    {
+      icon: <FaShippingFast className="icon orange" />,
+      title: "Global Delivery",
+      desc: "Efficient logistics network for timely and safe delivery across international markets.",
+    },
+    {
+      icon: <FaStar className="icon yellow" />,
+      title: "Quality Assurance",
+      desc: "Every batch undergoes strict quality checks to meet international standards and customer satisfaction.",
+    },
+  ];
+
+  useEffect(() => {
+    const elements = document.querySelectorAll(".why-card");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  }, []);
 
   return (
     <>
-      <div className="about-banner position-relative text-center d-flex align-items-center justify-content-center" style={{ height: '600px', backgroundImage: `url(${require('../assets/images/Aboutus.jpg')})` , backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="overlay position-absolute w-100 h-100" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
-        <h1 className="position-relative text-white display-3 fw-bold">About Banner</h1>
+     <div
+        className="services-banner"
+        style={{
+          backgroundImage: `url(${require('../../src/assets/images/aboutusbannermain.jpg')})`,
+        }}
+      >
+        <div className="banner-overlay"></div>
+        <h1 className="banner-title">About us</h1>
       </div>
-
       <div className="container-xxl py-5">
         <div className="container">
           <div className="row g-5 align-items-center">
@@ -111,6 +154,24 @@ const About = () => {
           </div>
         </div>
       </div>
+       <section className="why-section py-5" id="why-choose-us">
+      <div className="container">
+        <h2 className="section-title text-center mb-5">
+          Why <span>Choose Us</span>
+        </h2>
+        <div className="row mt-5">
+          {reasons.map((reason, index) => (
+            <div className="col-12 col-md-6 col-lg-3 mb-4" key={index}>
+              <div className="why-card text-center p-4 h-100">
+                {reason.icon}
+                <h4 className="why-title mt-3">{reason.title}</h4>
+                <p className="why-desc">{reason.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
     </>
   );
 };
